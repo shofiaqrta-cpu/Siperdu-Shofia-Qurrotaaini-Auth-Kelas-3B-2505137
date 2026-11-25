@@ -21,7 +21,15 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',  // fungsinya untuk seeder memasukkan data atau sedang seading
     ];
+
+    // Method untuk mengecek apakah user adalah admin? atau bukan.
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * The attributes that should be hidden for serialization.
